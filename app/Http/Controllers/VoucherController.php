@@ -11,8 +11,7 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Support\Facades\DB;
 
-class VoucherController extends Controller
-{
+class VoucherController extends Controller {
     public function index() {
         $vouchers = Voucher::all();
         return response()->json([

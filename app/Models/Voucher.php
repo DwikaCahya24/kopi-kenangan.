@@ -4,7 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Voucher extends Model {
+class Voucher extends Model
+{
     protected $table = 'vouchers';
     protected $fillable = [
         'code',
@@ -16,15 +17,18 @@ class Voucher extends Model {
         'description',
         'end_date'];
 
-    public function voucherBuyers() {
+    public function voucherBuyers()
+    {
         return $this->belongsToMany('App\Models\VoucherBuyer');
     }
 
-    public function getImageAttribute($value) {
+    public function getImageAttribute($value) 
+    {
         return json_decode($value);
     }
 
-    public function setImageAttribute($value) {
+    public function setImageAttribute($value) 
+    {
         $this->attributes['image'] = json_encode($value);
     }
 }
